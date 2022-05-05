@@ -16,7 +16,16 @@ function App() {
   return (
     <div className="App">
       <div className="top-container">
-        <MovieForm />
+        <MovieForm
+          movieFormTitle={movieFormTitle}
+          movieFormYear={movieFormYear}
+          movieFormDirector={movieFormDirector}
+          movieFormColor={movieFormColor}
+          setMovieFormTitle={setMovieFormTitle}
+          setMovieFormYear={setMovieFormYear}
+          setMovieFormDirector={setMovieFormDirector}
+          setMovieFormColor={setMovieFormColor}
+        />
         <Movie />
       </div>
       <label className="filter">
