@@ -26,7 +26,12 @@ function App() {
           setMovieFormDirector={setMovieFormDirector}
           setMovieFormColor={setMovieFormColor}
         />
-        <Movie />
+        <Movie
+          year={movieFormYear}
+          title={movieFormTitle}
+          director={movieFormDirector}
+          color={movieFormColor}
+        />
       </div>
       <label className="filter">
         Filter Movies by Title:
