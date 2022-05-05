@@ -17,11 +17,16 @@ export default function MovieForm({
       <form>
         <label>
           Title:
-          <input value={movieFormTitle} onChange={(e) => setMovieFormTitle(e.target.value)} />
+          <input
+            required
+            value={movieFormTitle}
+            onChange={(e) => setMovieFormTitle(e.target.value)}
+          />
         </label>
         <label>
           Year:
           <input
+            required
             type="number"
             value={movieFormYear}
             onChange={(e) => setMovieFormYear(e.target.value)}
@@ -29,15 +34,23 @@ export default function MovieForm({
         </label>
         <label>
           Director:
-          <input value={movieFormDirector} onChange={(e) => setMovieFormDirector(e.target.value)} />
+          <input
+            required
+            value={movieFormDirector}
+            onChange={(e) => setMovieFormDirector(e.target.value)}
+          />
         </label>
         <label>
           Poster Color:
-          <select value={movieFormColor} onChange={(e) => setMovieFormColor(e.target.value)}>
-            <option></option>
-            <option></option>
-            <option></option>
-            <option></option>
+          <select
+            required
+            value={movieFormColor}
+            onChange={(e) => setMovieFormColor(e.target.value)}
+          >
+            <option value="red">Red</option>
+            <option value="green">Green</option>
+            <option value="blue">Blue</option>
+            <option value="purple">Purple</option>
           </select>
         </label>
         <Button variant="primary" size="sm">

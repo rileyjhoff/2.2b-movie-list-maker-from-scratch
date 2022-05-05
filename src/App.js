@@ -12,7 +12,7 @@ function App() {
   const [movieFormTitle, setMovieFormTitle] = useState('');
   const [movieFormYear, setMovieFormYear] = useState('');
   const [movieFormDirector, setMovieFormDirector] = useState('');
-  const [movieFormColor, setMovieFormColor] = useState('');
+  const [movieFormColor, setMovieFormColor] = useState('red');
 
   return (
     <div className="App">
