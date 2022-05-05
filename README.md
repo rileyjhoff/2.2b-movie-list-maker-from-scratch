@@ -24,7 +24,7 @@ You will also see any lint errors in the console.
 Launches the test runner in the interactive watch mode.\
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-## Plan
+## Rubric
 
 React Movie Builder App
 
@@ -71,3 +71,33 @@ React Movie Builder App
 - `useEffect(() => filterMoviesByTitle(filterQuery), [filterQuery, allMovies]);` is the fix. Why does this work?
 - Track the `query` as state. Use `useEffect` to filter the movies every time this query changes.
 - What if instead of just adding movies to state, you added them to supabase and made your data persistent (fetching from supabase on load)?
+
+## Plan
+
+### Wireframes
+
+![wireframes](./public/wireframes.png)
+
+### Components
+
+- App
+  - MovieForm
+  - Movie
+  - MovieList
+    - Movie
+
+### HTML
+
+- MovieForm
+  - form
+  - maybe an h2 to title the form
+  - Label/input x 2
+  - select with 4 options (colors)
+    - values of options should correspond to a background color
+  - submit button
+- Movie
+  - h3 or h4 for movie title
+  - h4-h6 or p tag for year
+- MovieList
+  - label/input for filtering
+  - container for rendering the list of movies
