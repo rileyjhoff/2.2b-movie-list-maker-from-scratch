@@ -36,7 +36,17 @@
 .movie-form form {
   display: flex;
   flex-direction: column;
+  align-items: center;
   width: 180px;
+}
+
+.movie-form button {
+  margin: 10px 0 0;
+  width: fit-content;
+}
+
+.movie-form select {
+  width: 150px;
 }
 
 .movie-form form > label {

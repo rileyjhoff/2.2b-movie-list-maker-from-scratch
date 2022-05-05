@@ -1,4 +1,5 @@
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import Movie from './components/Movie';
 import MovieForm from './components/MovieForm';
 import MovieList from './components/MovieList';
