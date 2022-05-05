@@ -74,9 +74,17 @@
   align-items: center;
   justify-content: space-around;
   padding: 5px;
+  margin: 5px;
 }
 
 .movie-card * {
   margin: 5px;
   color: black;
+}
+
+.movie-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 80vw;
 }
