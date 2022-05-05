@@ -14,6 +14,22 @@ function App() {
   const [movieFormDirector, setMovieFormDirector] = useState('');
   const [movieFormColor, setMovieFormColor] = useState('red');
 
+  function handleSubmit(e) {
+    e.preventDefault();
+    const newMovie = {
+      title: movieFormTitle,
+      year: movieFormYear,
+      director: movieFormDirector,
+      color: movieFormColor,
+    };
+    allMovies.push(newMovie);
+    setAllMovies([...allMovies]);
+    setMovieFormTitle('');
+    setMovieFormYear('');
+    setMovieFormDirector('');
+    setMovieFormColor('red');
+  }
+
   return (
     <div className="App">
       <div className="top-container">
