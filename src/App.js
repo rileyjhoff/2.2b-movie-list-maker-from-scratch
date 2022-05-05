@@ -37,7 +37,7 @@ function App() {
         Filter Movies by Title:
         <input />
       </label>
-      <MovieList />
+      <MovieList movies={filter ? filteredMovies : allMovies} />
     </div>
   );
 }
