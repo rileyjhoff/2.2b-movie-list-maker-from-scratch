@@ -15,8 +15,14 @@ function App() {
 
   return (
     <div className="App">
-      <MovieForm />
-      <Movie />
+      <div className="top-container">
+        <MovieForm />
+        <Movie />
+      </div>
+      <label className="filter">
+        Filter Movies by Title:
+        <input />
+      </label>
       <MovieList />
     </div>
   );
