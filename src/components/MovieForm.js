@@ -15,19 +15,14 @@ export default function MovieForm({
   return (
     <div className="movie-form">
       <h2>Enter Movie Info</h2>
-      <form onSubmit={(e) => handleSubmit(e)}>
+      <form onSubmit={handleSubmit}>
         <label>
           Title:
-          <input
-            required
-            value={movieFormTitle}
-            onChange={(e) => setMovieFormTitle(e.target.value)}
-          />
+          <input value={movieFormTitle} onChange={(e) => setMovieFormTitle(e.target.value)} />
         </label>
         <label>
           Year:
           <input
-            required
             type="number"
             value={movieFormYear}
             onChange={(e) => setMovieFormYear(e.target.value)}
@@ -35,11 +30,7 @@ export default function MovieForm({
         </label>
         <label>
           Director:
-          <input
-            required
-            value={movieFormDirector}
-            onChange={(e) => setMovieFormDirector(e.target.value)}
-          />
+          <input value={movieFormDirector} onChange={(e) => setMovieFormDirector(e.target.value)} />
         </label>
         <label>
           Poster Color:
@@ -50,7 +41,7 @@ export default function MovieForm({
             <option value="purple">Purple</option>
           </select>
         </label>
-        <Button variant="primary" size="sm">
+        <Button variant="primary" size="sm" type="submit">
           Submit
         </Button>
       </form>

@@ -8,7 +8,7 @@ import { useState } from 'react';
 function App() {
   const [allMovies, setAllMovies] = useState([]);
   const [filter, setFilter] = useState('');
-  const [filteredMovies, setFilteredMovies] = useState([]);
+  // const [filteredMovies, setFilteredMovies] = useState([]);
   const [movieFormTitle, setMovieFormTitle] = useState('');
   const [movieFormYear, setMovieFormYear] = useState('');
   const [movieFormDirector, setMovieFormDirector] = useState('');
@@ -22,8 +22,7 @@ function App() {
       director: movieFormDirector,
       color: movieFormColor,
     };
-    allMovies.push(newMovie);
-    setAllMovies([...allMovies]);
+    setAllMovies([...allMovies, newMovie]);
     setMovieFormTitle('');
     setMovieFormYear('');
     setMovieFormDirector('');
@@ -57,7 +56,7 @@ function App() {
         Filter Movies by Title:
         <input value={filter} onChange={(e) => setFilter(e.target.value)} />
       </label>
-      <MovieList movies={filter ? filteredMovies : allMovies} />
+      <MovieList movies={allMovies} />
     </div>
   );
 }
