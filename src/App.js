@@ -35,7 +35,7 @@ function App() {
       </div>
       <label className="filter">
         Filter Movies by Title:
-        <input />
+        <input value={filter} onChange={(e) => setFilter(e.target.value)} />
       </label>
       <MovieList movies={filter ? filteredMovies : allMovies} />
     </div>
