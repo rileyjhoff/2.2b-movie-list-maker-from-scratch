@@ -10,11 +10,12 @@ export default function MovieForm({
   setMovieFormYear,
   setMovieFormDirector,
   setMovieFormColor,
+  handleSubmit,
 }) {
   return (
     <div className="movie-form">
       <h2>Enter Movie Info</h2>
-      <form>
+      <form onSubmit={handleSubmit}>
         <label>
           Title:
           <input

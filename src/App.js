@@ -42,6 +42,7 @@ function App() {
           setMovieFormYear={setMovieFormYear}
           setMovieFormDirector={setMovieFormDirector}
           setMovieFormColor={setMovieFormColor}
+          handleSubmit={handleSubmit}
         />
         <div className="current-movie">
           <Movie
