@@ -1,14 +1,15 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Movie from './components/Movie';
 import MovieForm from './components/MovieForm';
 import MovieList from './components/MovieList';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 function App() {
   const [allMovies, setAllMovies] = useState([]);
   const [filter, setFilter] = useState('');
-  // const [filteredMovies, setFilteredMovies] = useState([]);
+  const [filteredMovies, setFilteredMovies] = useState([]);
   const [movieFormTitle, setMovieFormTitle] = useState('');
   const [movieFormYear, setMovieFormYear] = useState('');
   const [movieFormDirector, setMovieFormDirector] = useState('');
@@ -34,6 +35,21 @@ function App() {
     allMovies.splice(index, 1);
     setAllMovies([...allMovies]);
   }
+
+  function handleFilterMovies() {
+    if (filter) {
+      const includedMovies = allMovies.filter((movie) =>
+        movie.title.toLowerCase().includes(filter.toLowerCase())
+      );
+      setFilteredMovies([...includedMovies]);
+    } else {
+      setFilteredMovies([...allMovies]);
+    }
+  }
+
+  useEffect(() => {
+    handleFilterMovies();
+  }, [filter, allMovies]);
 
   return (
     <div className="App">
@@ -62,7 +78,10 @@ function App() {
         Filter Movies by Title:
         <input value={filter} onChange={(e) => setFilter(e.target.value)} />
       </label>
-      <MovieList movies={allMovies} handleDeleteMovie={handleDeleteMovie} />
+      <MovieList
+        movies={filter ? filteredMovies : allMovies}
+        handleDeleteMovie={handleDeleteMovie}
+      />
     </div>
   );
 }
