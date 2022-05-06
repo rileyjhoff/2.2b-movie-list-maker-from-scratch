@@ -1,23 +1,92 @@
-import logo from './logo.svg';
+/* eslint-disable react-hooks/exhaustive-deps */
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Movie from './components/Movie';
+import MovieForm from './components/MovieForm';
+import MovieList from './components/MovieList';
+import { useEffect, useState } from 'react';
 
 function App() {
+  const [allMovies, setAllMovies] = useState([]);
+  const [filter, setFilter] = useState('');
+  const [filteredMovies, setFilteredMovies] = useState([]);
+  const [movieFormTitle, setMovieFormTitle] = useState('');
+  const [movieFormYear, setMovieFormYear] = useState('');
+  const [movieFormDirector, setMovieFormDirector] = useState('');
+  const [movieFormColor, setMovieFormColor] = useState('#3AAED8');
+
+  function handleSubmitMovie(e) {
+    e.preventDefault();
+    const newMovie = {
+      title: movieFormTitle,
+      year: movieFormYear,
+      director: movieFormDirector,
+      color: movieFormColor,
+    };
+    setAllMovies([...allMovies, newMovie]);
+    setMovieFormTitle('');
+    setMovieFormYear('');
+    setMovieFormDirector('');
+    setMovieFormColor('#3AAED8');
+  }
+
+  function handleDeleteMovie(title) {
+    const index = allMovies.findIndex((movie) => movie.title === title);
+    allMovies.splice(index, 1);
+    setAllMovies([...allMovies]);
+  }
+
+  function handleFilterMovies() {
+    if (filter) {
+      const includedMovies = allMovies.filter((movie) =>
+        movie.title.toLowerCase().includes(filter.toLowerCase())
+      );
+      setFilteredMovies([...includedMovies]);
+    } else {
+      setFilteredMovies([...allMovies]);
+    }
+  }
+
+  useEffect(() => {
+    handleFilterMovies();
+  }, [filter, allMovies]);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+      <header>
+        <h2>Movie Card Maker</h2>
       </header>
+      <div className="top-container">
+        <MovieForm
+          movieFormTitle={movieFormTitle}
+          movieFormYear={movieFormYear}
+          movieFormDirector={movieFormDirector}
+          movieFormColor={movieFormColor}
+          setMovieFormTitle={setMovieFormTitle}
+          setMovieFormYear={setMovieFormYear}
+          setMovieFormDirector={setMovieFormDirector}
+          setMovieFormColor={setMovieFormColor}
+          handleSubmitMovie={handleSubmitMovie}
+        />
+        <div className="current-movie">
+          <Movie
+            title={movieFormTitle}
+            year={movieFormYear}
+            director={movieFormDirector}
+            color={movieFormColor}
+          />
+        </div>
+      </div>
+      {allMovies.length > 0 && (
+        <label className="filter">
+          Filter Movies by Title:
+          <input value={filter} onChange={(e) => setFilter(e.target.value)} />
+        </label>
+      )}
+      <MovieList
+        movies={filter ? filteredMovies : allMovies}
+        handleDeleteMovie={handleDeleteMovie}
+      />
     </div>
   );
 }
