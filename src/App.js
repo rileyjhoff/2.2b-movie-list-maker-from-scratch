@@ -77,10 +77,12 @@ function App() {
           />
         </div>
       </div>
-      <label className="filter">
-        Filter Movies by Title:
-        <input value={filter} onChange={(e) => setFilter(e.target.value)} />
-      </label>
+      {allMovies.length > 0 && (
+        <label className="filter">
+          Filter Movies by Title:
+          <input value={filter} onChange={(e) => setFilter(e.target.value)} />
+        </label>
+      )}
       <MovieList
         movies={filter ? filteredMovies : allMovies}
         handleDeleteMovie={handleDeleteMovie}
