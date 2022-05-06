@@ -14,7 +14,6 @@ export default function MovieForm({
 }) {
   return (
     <div className="movie-form">
-      <h2>Enter Movie Info</h2>
       <form onSubmit={handleSubmitMovie}>
         <label>
           Title:
@@ -44,11 +43,13 @@ export default function MovieForm({
         <label>
           Poster Color:
           <select value={movieFormColor} onChange={(e) => setMovieFormColor(e.target.value)}>
-            <option value="#08415C95">Blue</option>
-            <option value="#CC293695">Red</option>
-            <option value="#6B818C95">Gray</option>
-            <option value="#F1BF9895">Peach</option>
-            <option value="#EEE5E995">Lavender</option>
+            <option value="#3AAED8">Blue</option>
+            <option value="#52AA5E">Green</option>
+            <option value="#FFC914">Yellow</option>
+            <option value="#EC7D10">Orange</option>
+            <option value="#DB3A34">Red</option>
+            <option value="#FF3CC7">Pink</option>
+            <option value="#AA7DCE">Lavender</option>
           </select>
         </label>
         <Button variant="primary" size="sm" type="submit">

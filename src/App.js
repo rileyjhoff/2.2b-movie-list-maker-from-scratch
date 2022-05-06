@@ -13,7 +13,7 @@ function App() {
   const [movieFormTitle, setMovieFormTitle] = useState('');
   const [movieFormYear, setMovieFormYear] = useState('');
   const [movieFormDirector, setMovieFormDirector] = useState('');
-  const [movieFormColor, setMovieFormColor] = useState('#08415C95');
+  const [movieFormColor, setMovieFormColor] = useState('#3AAED8');
 
   function handleSubmitMovie(e) {
     e.preventDefault();
@@ -27,7 +27,7 @@ function App() {
     setMovieFormTitle('');
     setMovieFormYear('');
     setMovieFormDirector('');
-    setMovieFormColor('#08415C95');
+    setMovieFormColor('#3AAED8');
   }
 
   function handleDeleteMovie(title) {
@@ -53,6 +53,9 @@ function App() {
 
   return (
     <div className="App">
+      <header>
+        <h2>Movie Card Maker</h2>
+      </header>
       <div className="top-container">
         <MovieForm
           movieFormTitle={movieFormTitle}
