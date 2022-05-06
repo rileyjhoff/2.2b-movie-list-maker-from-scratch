@@ -14,7 +14,7 @@ function App() {
   const [movieFormDirector, setMovieFormDirector] = useState('');
   const [movieFormColor, setMovieFormColor] = useState('red');
 
-  function handleSubmit(e) {
+  function handleSubmitMovie(e) {
     e.preventDefault();
     const newMovie = {
       title: movieFormTitle,
@@ -29,6 +29,12 @@ function App() {
     setMovieFormColor('red');
   }
 
+  function handleDeleteMovie(title) {
+    const index = allMovies.findIndex((movie) => movie.title === title);
+    allMovies.splice(index, 1);
+    setAllMovies([...allMovies]);
+  }
+
   return (
     <div className="App">
       <div className="top-container">
@@ -41,7 +47,7 @@ function App() {
           setMovieFormYear={setMovieFormYear}
           setMovieFormDirector={setMovieFormDirector}
           setMovieFormColor={setMovieFormColor}
-          handleSubmit={handleSubmit}
+          handleSubmitMovie={handleSubmitMovie}
         />
         <div className="current-movie">
           <Movie
