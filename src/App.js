@@ -62,7 +62,7 @@ function App() {
         Filter Movies by Title:
         <input value={filter} onChange={(e) => setFilter(e.target.value)} />
       </label>
-      <MovieList movies={allMovies} />
+      <MovieList movies={allMovies} handleDeleteMovie={handleDeleteMovie} />
     </div>
   );
 }

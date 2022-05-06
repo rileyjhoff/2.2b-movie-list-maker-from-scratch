@@ -1,7 +1,7 @@
 import React from 'react';
 import Movie from './Movie';
 
-export default function MovieList({ movies }) {
+export default function MovieList({ movies, handleDeleteMovie }) {
   return (
     <div className="movie-list">
       {movies.map((movie, i) => (
@@ -11,6 +11,7 @@ export default function MovieList({ movies }) {
           year={movie.year}
           director={movie.director}
           color={movie.color}
+          handleDeleteMovie={handleDeleteMovie}
         />
       ))}
     </div>
