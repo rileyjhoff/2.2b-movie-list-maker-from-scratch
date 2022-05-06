@@ -13,7 +13,7 @@ function App() {
   const [movieFormTitle, setMovieFormTitle] = useState('');
   const [movieFormYear, setMovieFormYear] = useState('');
   const [movieFormDirector, setMovieFormDirector] = useState('');
-  const [movieFormColor, setMovieFormColor] = useState('red');
+  const [movieFormColor, setMovieFormColor] = useState('#08415C95');
 
   function handleSubmitMovie(e) {
     e.preventDefault();
@@ -27,7 +27,7 @@ function App() {
     setMovieFormTitle('');
     setMovieFormYear('');
     setMovieFormDirector('');
-    setMovieFormColor('red');
+    setMovieFormColor('#08415C95');
   }
 
   function handleDeleteMovie(title) {
