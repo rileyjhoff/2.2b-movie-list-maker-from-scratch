@@ -1,38 +1,114 @@
+#root {
+  display: flex;
+  justify-content: center;
+  background: #86A397;
+  width: 100vw;
+  height: 100vh;
+}
+
 .App {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #F7DBA7;
+  height: 100vh;
+  width: 80vw;
+}
+
+header {
+  width: 100vw;
+  height: 60px;
+  background-color: #E5BE9E;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+header h2 {
+  margin: 5px 0;
+}
+
+.top-container {
+  display: flex;
+  justify-content: center;
+}
+
+.filter {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  margin: 20px 0 10px;
+}
+
+.filter > input {
+  margin-top: 5px;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.movie-form {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  padding: 10px;
+  width: 40vw;
 }
 
-.App-link {
-  color: #61dafb;
+.movie-form form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 180px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.movie-form button {
+  margin: 10px 0 0;
+  width: fit-content;
+}
+
+.movie-form select {
+  width: 100px;
+}
+
+.movie-form form > label {
+  display: flex;
+  flex-direction: column;
+  margin: 5px 0;
+}
+
+.movie-form form > label > input, .movie-form select {
+  margin-top: 5px;
+}
+
+.current-movie {
+  width: 40vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.movie-card {
+  height: 160px;
+  width: 160px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  padding: 5px;
+  margin: 5px;
+}
+
+.movie-card * {
+  margin: 5px;
+  color: black;
+}
+
+.movie-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 80vw;
 }
