@@ -138,7 +138,7 @@ export default class App extends React.Component {
             />
           </div>
         </div>
-        {this.state.allMovies.length >= 0 && (
+        {this.state.allMovies.length > 0 && (
           <label className="filter">
             Filter Movies by Title:
             <input
